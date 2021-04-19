@@ -1,3 +1,3 @@
 # maebashi-it-design-exercise-III
 
-[Wiki](https://github.com/h4us/maebashi-it-design-exercise-III/wiki)
+サンプルコードやサンプルデータ以外の授業に関連するコンテンツは [Wiki](https://github.com/h4us/maebashi-it-design-exercise-III/wiki) へ
