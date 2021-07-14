@@ -1,0 +1,9 @@
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+video {
+  min-width: 640px;
+  min-height: 480px;
+}
