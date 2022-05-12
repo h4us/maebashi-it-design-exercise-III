@@ -52,7 +52,7 @@ public class LineSceneManager : MonoBehaviour
         _localOrigin = new Vector2(139.03225f, 36.4161f);
 
         XmlDocument doc = new XmlDocument();
-        doc.Load(Application.streamingAssetsPath + "/2022-04-18.kml.xml");
+        doc.Load(Application.streamingAssetsPath + "/2022-04-18.kml");
         XmlNodeList elemList = doc.GetElementsByTagName("coordinates");
 
         for (int i = 0; i < elemList.Count; i++)
