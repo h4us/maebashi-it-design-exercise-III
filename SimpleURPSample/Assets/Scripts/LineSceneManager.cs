@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml;
 
 using UnityEngine;
@@ -19,6 +17,7 @@ public class LineSceneManager : MonoBehaviour
     private float metersPerLat;
     private float metersPerLon;
 
+    // - refs: https://github.com/MichaelTaylor3D/UnityGPSConverter/blob/master/GPSEncoder.cs
     private void FindMetersPerLat(float lat) // Compute lengths of degrees
     {
         float m1 = 111132.92f;    // latitude calculation term 1
@@ -43,13 +42,14 @@ public class LineSceneManager : MonoBehaviour
         float xPosition = metersPerLon * (gps.y - _LonOrigin); //Calc current lat
         return new Vector3((float)xPosition, 0, (float)zPosition);
     }
+    // --
 
     private void Start()
     {
         lineObject = GameObject.Find("Line");
         LineRenderer lRenderer = lineObject.GetComponent<LineRenderer>();
         kmll = new List<Vector3>();
-        _localOrigin = new Vector2(139.0324f, 36.4161f);
+        _localOrigin = new Vector2(139.03225f, 36.4161f);
 
         XmlDocument doc = new XmlDocument();
         doc.Load(Application.streamingAssetsPath + "/2022-04-18.kml.xml");
