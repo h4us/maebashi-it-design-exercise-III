@@ -5,17 +5,15 @@ using UnityEngine;
 
 public class LineSceneManager : MonoBehaviour
 {
-    // private AsyncOperationHandle<GameObject> prefabHandle;
-    // private GameObject spawnedGameObject;
-    public GameObject lineObject;
-    private List<Vector3> kmll;
-
-    private Vector2 _localOrigin = Vector2.zero;
+    private List<Vector3> _kmll = new List<Vector3>();
+    private Vector2 _localOrigin = new Vector2(139.03225f, 36.4161f);
     private float _LatOrigin { get { return _localOrigin.x; } }
     private float _LonOrigin { get { return _localOrigin.y; } }
 
     private float metersPerLat;
     private float metersPerLon;
+
+    public GameObject lineObject;
 
     // - refs: https://github.com/MichaelTaylor3D/UnityGPSConverter/blob/master/GPSEncoder.cs
     private void FindMetersPerLat(float lat) // Compute lengths of degrees
@@ -48,8 +46,6 @@ public class LineSceneManager : MonoBehaviour
     {
         lineObject = GameObject.Find("Line");
         LineRenderer lRenderer = lineObject.GetComponent<LineRenderer>();
-        kmll = new List<Vector3>();
-        _localOrigin = new Vector2(139.03225f, 36.4161f);
 
         XmlDocument doc = new XmlDocument();
         doc.Load(Application.streamingAssetsPath + "/2022-04-18.kml");
@@ -68,14 +64,14 @@ public class LineSceneManager : MonoBehaviour
                     // vec3.x *= 0.1f;
                     vec3.y += 1.0f;
                     // vec3.z *= 0.1f;
-                    kmll.Add(vec3);
+                    _kmll.Add(vec3);
 
-                    Debug.Log(kmll[kmll.Count - 1].x + ", " + kmll[kmll.Count - 1].y + ", " + kmll[kmll.Count - 1].z + " (Total: " + kmll.Count + ")");
+                    Debug.Log(_kmll[_kmll.Count - 1].x + ", " + _kmll[_kmll.Count - 1].y + ", " + _kmll[_kmll.Count - 1].z + " (Total: " + _kmll.Count + ")");
                 }
             }
         }
 
-        lRenderer.SetPositions(kmll.ToArray());
+        lRenderer.SetPositions(_kmll.ToArray());
     }
 
 
