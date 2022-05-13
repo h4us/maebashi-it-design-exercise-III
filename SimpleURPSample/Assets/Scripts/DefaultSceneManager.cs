@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.IO;
 
+using UnityEngine;
 // using UnityEngine.AddressableAssets;
 // using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class Manager : MonoBehaviour
+// [System.Serializable]
+// public class GeoJsonObject
+// {
+//     public string type;
+//     public GeoJsonFeature[] features;
+// }
+
+public class DefaultSceneManager : MonoBehaviour
 {
     // private AsyncOperationHandle<GameObject> prefabHandle;
     // private GameObject spawnedGameObject;
