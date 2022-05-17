@@ -1,7 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LineSceneManager : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class LineSceneManager : MonoBehaviour
     private float metersPerLon;
 
     public GameObject lineObject;
+    public GameObject player;
 
     // - refs: https://github.com/MichaelTaylor3D/UnityGPSConverter/blob/master/GPSEncoder.cs
     private void FindMetersPerLat(float lat) // Compute lengths of degrees
@@ -47,6 +50,8 @@ public class LineSceneManager : MonoBehaviour
         lineObject = GameObject.Find("Line");
         LineRenderer lRenderer = lineObject.GetComponent<LineRenderer>();
 
+        player = GameObject.Find("PlayerArmature");
+
         XmlDocument doc = new XmlDocument();
         doc.Load(Application.streamingAssetsPath + "/2022-04-18.kml");
         XmlNodeList elemList = doc.GetElementsByTagName("coordinates");
@@ -74,6 +79,24 @@ public class LineSceneManager : MonoBehaviour
         lRenderer.SetPositions(_kmll.ToArray());
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Alpha1)) 
+        {
+            player.transform.position = new Vector3(0.0f, 2.0f, 0.0f);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha0))
+        {
+            SceneManager.LoadScene("RemoteAudio");
+        }
+
+    }
+
+    private void OnGUI()
+    {
+        //if (Event.current.Equals(Event.KeyboardEvent)
+    }
 
     private void OnDestroy()
     {
