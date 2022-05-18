@@ -51,11 +51,9 @@ public class RemoteAudioSceneManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
             player.transform.position = new Vector3(0.0f, 2.0f, 0.0f);
-        }
-
-        if (Input.GetKeyUp(KeyCode.Alpha0))
+        } else if (Input.GetKeyUp(KeyCode.Alpha0))
         {
-            SceneManager.LoadScene("YanoScene");
+            SceneManager.LoadScene("DefaultScene");
         }
     }
 

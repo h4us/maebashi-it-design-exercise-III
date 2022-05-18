@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+using Cinemachine;
 // using UnityEngine.AddressableAssets;
 // using UnityEngine.ResourceManagement.AsyncOperations;
 
@@ -20,6 +22,10 @@ public class DefaultSceneManager : MonoBehaviour
     // private GameObject spawnedGameObject;
 
     public GameObject player;
+    public GameObject playerClone;
+
+    private GameObject[] _vcam;
+    private int _cidx = 0;
 
     // private async void Start()
     private void Start()
@@ -31,7 +37,10 @@ public class DefaultSceneManager : MonoBehaviour
         // spawnedGameObject = Instantiate(prefab);
         // spawnedGameObject.name = "Spawned Game Object";
 
-        player = GameObject.Find("PlayerArmature");
+        // player = GameObject.Find("PlayerArmature");
+        // Instantiate(player, new Vector3(0.0f, 2.0f, 0.0f), Quaternion.identity);
+
+        _vcam = GameObject.FindGameObjectsWithTag("CinemachineTarget");
     }
 
 
@@ -39,13 +48,34 @@ public class DefaultSceneManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
-            player.transform.position = new Vector3(0.0f, 2.0f, 0.0f);
-            Debug.Log("1");
+            Debug.Log("1 up");
+            // player.transform.position = new Vector3(0.0f, 2.0f, 0.0f);
+            // if (playerClone)
+            // {
+            //     Destroy(playerClone);
+            // }
+            // playerClone = Instantiate(player, new Vector3(0.0f, 2.0f, 0.0f), Quaternion.identity);
         }
-
-        if (Input.GetKeyUp(KeyCode.Alpha0))
+        else if (Input.GetKeyUp(KeyCode.Alpha0))
         {
-            SceneManager.LoadScene("LineScene");
+            SceneManager.LoadScene("Line");
+        }
+        else if (Input.GetKeyUp(KeyCode.Alpha9))
+        {
+            _cidx = (_cidx + 1) % 3;
+
+            if (_cidx < 1)
+            {
+                CinemachineVirtualCamera vc = _vcam[0].GetComponent<CinemachineVirtualCamera>();
+                CinemachineVirtualCamera vc2 = _vcam[1].GetComponent<CinemachineVirtualCamera>();
+                vc.Priority = 9;
+                vc2.Priority = 9;
+            } else {
+                CinemachineVirtualCamera vc = _vcam[0].GetComponent<CinemachineVirtualCamera>();
+                CinemachineVirtualCamera vc2 = _vcam[1].GetComponent<CinemachineVirtualCamera>();
+                vc.Priority = _cidx == 1 ? 11 : 9;
+                vc2.Priority = _cidx == 2 ? 11 : 9;
+            }
         }
     }
 
