@@ -1,0 +1,61 @@
+{
+	"tags": null,
+	"position": [
+		-9165.099609375,
+		5921.64501953125,
+		9239.3642578125
+	],
+	"rotation": [
+		0,
+		0,
+		0
+	],
+	"rotationQuaternion": [
+		-0.2108859419822693,
+		-0.3700554072856903,
+		-0.08665293455123901,
+		0.9005983471870422
+	],
+	"scaling": [
+		1,
+		1,
+		1
+	],
+	"billboardMode": 0,
+	"scalingDeterminant": 1,
+	"infiniteDistance": false,
+	"ignoreNonUniformScaling": false,
+	"reIntegrateRotationIntoRotationQuaternion": false,
+	"name": "Camera",
+	"id": "64456461-437f-4cb6-926a-bd3cd77e230a",
+	"state": "",
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/nodes/4"
+			]
+		}
+	},
+	"type": "TransformNode",
+	"uniqueId": 140,
+	"parentId": "8ad5d36c-7577-4a4a-802f-16d7b99bea46",
+	"localMatrix": {
+		"0": 1,
+		"1": 0,
+		"2": 0,
+		"3": 0,
+		"4": 0,
+		"5": 1,
+		"6": 0,
+		"7": 0,
+		"8": 0,
+		"9": 0,
+		"10": 1,
+		"11": 0,
+		"12": 0,
+		"13": 0,
+		"14": 0,
+		"15": 1
+	},
+	"isEnabled": true
+}

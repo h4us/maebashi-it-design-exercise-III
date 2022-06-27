@@ -1,0 +1,88 @@
+{
+	"tags": "modified",
+	"ellipsoid": [
+		3,
+		7.75,
+		3
+	],
+	"ellipsoidOffset": [
+		0,
+		0,
+		0
+	],
+	"checkCollisions": true,
+	"applyGravity": true,
+	"rotation": [
+		0,
+		0,
+		0
+	],
+	"speed": 0.25,
+	"position": [
+		-36.99613952636719,
+		18.211854934692383,
+		-69.20867919921875
+	],
+	"upVector": [
+		-0.002762249205261469,
+		0.9975710511207581,
+		-0.06960160285234451
+	],
+	"fov": 0.9,
+	"projectionPlaneTilt": 0,
+	"minZ": 1,
+	"maxZ": 5000,
+	"inertia": 0.9,
+	"mode": 0,
+	"layerMask": 268435455,
+	"fovMode": 0,
+	"cameraRigMode": 0,
+	"name": "camera",
+	"id": "05e93a47-ec25-41ad-a1df-16f279c32246",
+	"state": "",
+	"metadata": {
+		"script": {
+			"name": "src/scenes/player.ts"
+		}
+	},
+	"uniqueId": 88,
+	"type": "UniversalCamera",
+	"inputsmgr": {
+		"FreeCameraKeyboardMoveInput": {
+			"tags": null,
+			"keysUp": [
+				87
+			],
+			"keysUpward": [
+				33
+			],
+			"keysDown": [
+				83
+			],
+			"keysDownward": [
+				34
+			],
+			"keysLeft": [
+				65
+			],
+			"keysRight": [
+				68
+			],
+			"rotationSpeed": 0.5,
+			"keysRotateLeft": [],
+			"keysRotateRight": []
+		},
+		"FreeCameraMouseInput": {
+			"tags": null,
+			"buttons": [
+				0,
+				1,
+				2
+			],
+			"angularSensibility": 4000
+		}
+	},
+	"animations": [],
+	"ranges": [],
+	"isEnabled": true
+}

@@ -1,0 +1,53 @@
+{
+	"tags": null,
+	"groundColor": [
+		0,
+		0,
+		0
+	],
+	"direction": [
+		0,
+		-1,
+		0
+	],
+	"diffuse": [
+		1,
+		1,
+		1
+	],
+	"specular": [
+		1,
+		1,
+		1
+	],
+	"falloffType": 0,
+	"intensity": 0.5,
+	"range": 1.7976931348623157e+308,
+	"intensityMode": 0,
+	"radius": 0.00001,
+	"_renderPriority": 0,
+	"shadowEnabled": true,
+	"excludeWithLayerMask": 0,
+	"includeOnlyWithLayerMask": 0,
+	"lightmapMode": 0,
+	"name": "hemispheric_db",
+	"id": "e7a891f0-1e4c-41fc-b17e-8163a82f97c4",
+	"state": "",
+	"metadata": {
+		"script": {
+			"name": "None"
+		},
+		"doNotExport": false,
+		"_waitingParentId": null
+	},
+	"uniqueId": 86,
+	"type": 3,
+	"excludedMeshesIds": [
+		"eee4645a-645f-4faf-b10b-868d396f01f0",
+		"6a927ea7-51d9-4248-9b80-4d34b53b386e"
+	],
+	"animations": [],
+	"ranges": [],
+	"isEnabled": true,
+	"parentId": null
+}

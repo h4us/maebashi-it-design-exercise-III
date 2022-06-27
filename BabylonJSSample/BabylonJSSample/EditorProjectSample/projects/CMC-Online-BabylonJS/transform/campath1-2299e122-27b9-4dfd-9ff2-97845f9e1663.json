@@ -1,0 +1,61 @@
+{
+	"tags": null,
+	"position": [
+		-2878.008544921875,
+		5921.64501953125,
+		7842.232421875
+	],
+	"rotation": [
+		0,
+		0,
+		0
+	],
+	"rotationQuaternion": [
+		0,
+		0,
+		0,
+		1
+	],
+	"scaling": [
+		1,
+		1,
+		1
+	],
+	"billboardMode": 0,
+	"scalingDeterminant": 1,
+	"infiniteDistance": false,
+	"ignoreNonUniformScaling": false,
+	"reIntegrateRotationIntoRotationQuaternion": false,
+	"name": "campath1",
+	"id": "2299e122-27b9-4dfd-9ff2-97845f9e1663",
+	"state": "",
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/nodes/8"
+			]
+		}
+	},
+	"type": "TransformNode",
+	"uniqueId": 150,
+	"parentId": "8ad5d36c-7577-4a4a-802f-16d7b99bea46",
+	"localMatrix": {
+		"0": 1,
+		"1": 0,
+		"2": 0,
+		"3": 0,
+		"4": 0,
+		"5": 1,
+		"6": 0,
+		"7": 0,
+		"8": 0,
+		"9": 0,
+		"10": 1,
+		"11": 0,
+		"12": 0,
+		"13": 0,
+		"14": 0,
+		"15": 1
+	},
+	"isEnabled": true
+}

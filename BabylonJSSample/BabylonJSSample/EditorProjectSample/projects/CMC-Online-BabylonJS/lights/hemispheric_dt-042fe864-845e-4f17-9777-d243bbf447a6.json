@@ -1,0 +1,49 @@
+{
+	"tags": null,
+	"groundColor": [
+		0,
+		0,
+		0
+	],
+	"direction": [
+		1,
+		1,
+		0
+	],
+	"diffuse": [
+		1,
+		1,
+		1
+	],
+	"specular": [
+		1,
+		1,
+		1
+	],
+	"falloffType": 0,
+	"intensity": 0.7,
+	"range": 1.7976931348623157e+308,
+	"intensityMode": 0,
+	"radius": 0.00001,
+	"_renderPriority": 0,
+	"shadowEnabled": true,
+	"excludeWithLayerMask": 0,
+	"includeOnlyWithLayerMask": 0,
+	"lightmapMode": 0,
+	"name": "hemispheric_dt",
+	"id": "042fe864-845e-4f17-9777-d243bbf447a6",
+	"state": "",
+	"metadata": {
+		"script": {
+			"name": "None"
+		},
+		"doNotExport": false,
+		"_waitingParentId": null
+	},
+	"uniqueId": 84,
+	"type": 3,
+	"animations": [],
+	"ranges": [],
+	"isEnabled": true,
+	"parentId": null
+}

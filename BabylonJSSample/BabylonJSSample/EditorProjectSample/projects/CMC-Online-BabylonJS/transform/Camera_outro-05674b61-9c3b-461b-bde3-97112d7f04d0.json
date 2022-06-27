@@ -1,0 +1,61 @@
+{
+	"tags": null,
+	"position": [
+		-9165.099609375,
+		5966.64501953125,
+		9239.3642578125
+	],
+	"rotation": [
+		0,
+		0,
+		0
+	],
+	"rotationQuaternion": [
+		-0.21213208138942719,
+		-0.36993515491485596,
+		-0.087164968252182,
+		0.9003056287765503
+	],
+	"scaling": [
+		1,
+		1,
+		1
+	],
+	"billboardMode": 0,
+	"scalingDeterminant": 1,
+	"infiniteDistance": false,
+	"ignoreNonUniformScaling": false,
+	"reIntegrateRotationIntoRotationQuaternion": false,
+	"name": "Camera_outro",
+	"id": "05674b61-9c3b-461b-bde3-97112d7f04d0",
+	"state": "",
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/nodes/13"
+			]
+		}
+	},
+	"type": "TransformNode",
+	"uniqueId": 155,
+	"parentId": "8ad5d36c-7577-4a4a-802f-16d7b99bea46",
+	"localMatrix": {
+		"0": 1,
+		"1": 0,
+		"2": 0,
+		"3": 0,
+		"4": 0,
+		"5": 1,
+		"6": 0,
+		"7": 0,
+		"8": 0,
+		"9": 0,
+		"10": 1,
+		"11": 0,
+		"12": 0,
+		"13": 0,
+		"14": 0,
+		"15": 1
+	},
+	"isEnabled": true
+}

@@ -1,0 +1,32 @@
+@tailwind base;
+
+html, body {
+    /* -webkit-tap-highlight-color: transparent; */
+    /* background: linear-gradient(0deg, #060606, 70%, #262626); */
+    background: radial-gradient(#060606 0%, #060606 10%, #1f1f1f 70%, #303030 100%);
+}
+
+@tailwind components;
+
+.babylonUnmuteIcon {
+    display: none !important;
+}
+
+.table {
+    @apply bg-zinc-700/90 rounded-md text-white;
+}
+
+.table :where(th, td) {
+    @apply whitespace-nowrap py-2 px-4 align-middle;
+}
+
+.table :where(th, td) > span {
+    @apply italic rounded-sm bg-white/90 text-orange-800 text-center px-4 inline-block;
+    min-width: 3rem;
+}
+
+.table :where(thead, tfoot) :where(th, td) {
+    @apply text-center font-bold;
+}
+
+@tailwind utilities;
