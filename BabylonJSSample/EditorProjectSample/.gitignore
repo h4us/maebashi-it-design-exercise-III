@@ -133,3 +133,6 @@ dist
 _streamingAssets/*
 !_streamingAssets/.gitkeep
 !_streamingAssets/001.mp4
+.firebaserc
+.firebase
+firebase.json
