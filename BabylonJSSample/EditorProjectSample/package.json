@@ -9,7 +9,7 @@
         "out": "run-script-os",
         "wincp": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./cp.ps1",
         "out:win32": "webpack --mode production && tailwindcss -i ./styles/main.css -o ./dist/main.css && npm run wincp",
-        "out:defaut": "webpack --mode production && tailwindcss -i ./styles/main.css -o ./dist/main.css && mkdir -p out && cp -rf index.html dist scenes _streamingAssets out",
+        "out:default": "webpack --mode production && tailwindcss -i ./styles/main.css -o ./dist/main.css && mkdir -p out && cp -rf index.html dist scenes _streamingAssets out",
         "watch": "webpack --mode development --watch",
         "webserver": "http-server -p 1338 -c-1",
         "style-dev": "tailwindcss -i ./styles/main.css -o ./dist/main.css --watch"
