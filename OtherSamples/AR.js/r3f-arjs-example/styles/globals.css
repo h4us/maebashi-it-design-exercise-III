@@ -1,0 +1,17 @@
+@tailwind base;
+
+body {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+video {
+  max-width: unset;
+}
+
+@tailwind components;
+@tailwind utilities;

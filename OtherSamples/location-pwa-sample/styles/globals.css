@@ -1,0 +1,33 @@
+@tailwind base;
+
+/* body { */
+/*   display: block; */
+/*   width: 100%; */
+/*   height: 100%; */
+/*   margin: 0px; */
+/*   padding: 0px; */
+/*   overflow: hidden; */
+/* } */
+
+.app-beacon {
+  animation: ping 2s ease-out infinite;
+}
+
+@keyframes ping {
+  0% {
+    fill: rgb(51, 136, 255);
+    fill-opacity: 0.6;
+    stroke-width: 10;
+    stroke-opacity: 1;
+  }
+  100% {
+    fill: rgb(51, 136, 255);
+    fill-opacity: 0.4;
+    stroke-width: 2;
+    stroke-opacity: 0.4;
+  }
+}
+
+@tailwind components;
+
+@tailwind utilities;
