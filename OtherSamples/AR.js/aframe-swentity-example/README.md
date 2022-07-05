@@ -1,6 +1,6 @@
 # Simple A-Frame based Example
 
-Run with localhost
+Run on localhost
 
 ```bash
 npx run http-server
