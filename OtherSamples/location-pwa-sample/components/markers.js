@@ -1,0 +1,17 @@
+export default [
+  {
+    location: { lat: 35.6674481, lng: 139.753962 },
+    name: 'name 1',
+    media: 'assets/test.gif'
+  },
+  {
+    location: { lat: 35.666901599999996, lng: 139.753394 },
+    name: 'name 2',
+    media: 'assets/test.gif'
+  },
+  {
+    location: { lat: 35.671574100000036, lng: 139.7647277 },
+    name: 'name 3',
+    media: 'assets/test.gif'
+  }
+];
