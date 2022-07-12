@@ -9,6 +9,10 @@
 /*   overflow: hidden; */
 /* } */
 
+.archive-item {
+  @apply flex flex-col items-center justify-center w-full mb-2 aspect-square;
+}
+
 .app-beacon {
   animation: ping 2s ease-out infinite;
 }

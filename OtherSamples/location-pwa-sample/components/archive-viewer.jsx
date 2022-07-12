@@ -25,17 +25,16 @@ const ArchiveViewer = (props) => {
           </button>
         </nav>
         <section
-          /* className="w-full h-full p-2 text-white overflow-scroll bg-red-500/50" */
           className="w-full h-full px-12 py-4 text-white grid grid-cols-3 gap-2 overflow-y-scroll">
             {
               markers.map((el, i) => (
                 <a
-                  className='flex flex-col items-center justify-center w-full py-4'
+                  className="archive-item"
                   href="#"
                   key={i}>
-                  <h3>{i} : {el.name}</h3>
+                  <h3 className="text-center">{el.name}</h3>
                   {/* <SamplCat /> */}
-                  <img src={el.media} />
+                  <img className="h-24 object-contain" src={el.media} />
                 </a>
               ))
             }

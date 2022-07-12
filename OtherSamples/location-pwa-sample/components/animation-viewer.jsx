@@ -5,6 +5,7 @@ import { XIcon } from '@primer/octicons-react';
 import useStore from './store';
 
 const AnimationViewer = (props) => {
+  const nearestMarker = useStore((s) => s.nearestMarker);
   const toggleAnimationView = useStore((s) => s.toggleAnimationView);
   const handleCloseClick = () => {
     toggleAnimationView();
@@ -22,7 +23,7 @@ const AnimationViewer = (props) => {
         </nav>
         <section className="flex w-full h-full p-2 text-white">
           {/* TODO */}
-          <img className='object-contain' src="assets/test.gif" />
+          <img className='object-contain' src={nearestMarker ? nearestMarker.media : 'assets/test.gif'} />
           {/* -- */}
         </section>
       </div>

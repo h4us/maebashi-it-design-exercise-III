@@ -59,17 +59,11 @@ const LeafletView = (props) => {
 
   const mapRef = useRef();
   const timerRef = useRef();
-  const mapBoundary = useRef(
-    // L.latLngBounds(
-    //   L.latLng(35.71460112595024, 139.7857475280762),
-    //   L.latLng(35.62158189955968, 139.72137451171878)
-    // )
-    null
-  );
+  const locationRef = useRef();
 
   const now = useStore((s) => s.now);
-  const setNearestMarker= useStore((s) => s.setNearestMarker);
-  const popAnimationView= useStore((s) => s.popAnimationView);
+  const setNearestMarker = useStore((s) => s.setNearestMarker);
+  const popAnimationView = useStore((s) => s.popAnimationView);
 
   useEffect(() => {
     if (mapRef.current) {
@@ -82,11 +76,11 @@ const LeafletView = (props) => {
   //
   const cmpDist = (markers, current) => {
     let d_nearest = 1000;
-    let p_nearest = false;
+    let p_nearest = null;
 
     for (let i = 0; i < markers.length; i++) {
       const l = L.latLng(markers[i].location);
-      const l2 = L.latLng(current);
+      const l2 = current;
       const d = l.distanceTo(l2);
 
       if (d < d_nearest) {
@@ -98,6 +92,10 @@ const LeafletView = (props) => {
     return [p_nearest, d_nearest];
   };
 
+  const zeroDist = (l1, l2) => {
+    return l1.distanceTo(l2) == 0;
+  };
+
   useEffect(() => {
     if (timerRef.current) clearInterval(timerRef);
     timerRef.current = false;
@@ -105,46 +103,43 @@ const LeafletView = (props) => {
     if (useVirtual) {
       timerRef.current = setInterval(() => {
         const [p, d] = cmpDist(markers, currentVPin);
-        //
-        console.log('virtual', p, d);
-        if (d < 200) {
+        const ckZero = locationRef.current ? zeroDist(currentVPin, locationRef.current) : false;
+
+        console.info('virtual', p, d);
+
+        if (d < 200 && !ckZero) {
           setNearestMarker(p);
+          locationRef.current = currentVPin;
           popAnimationView();
         }
-      }, 3000);
-    }
+      }, 2000);
+   }
 
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [useVirtual]);
+  }, [currentVPin, useVirtual]);
 
   useEffect(() => {
     const [p, d] = cmpDist(markers, currentLocation);
-    //
-    console.log('current', p, d);
+    const ckZero = locationRef.current ? zeroDist(currentLocation, locationRef.current) : false;
 
-    if (d < 200) {
+    console.info('real', p, d);
+
+    if (d < 200 && !ckZero) {
       setNearestMarker(p);
       popAnimationView();
     }
   }, [currentLocation]);
 
-
   useEffect(() => {
     navigator.geolocation.watchPosition((pos) => {
-      const cl = L.latLng(pos.coords.latitude, pos.coords.longitude);
-
-      if (mapBoundary.current == null || mapBoundary.current.contains(cl)) {
-        if (timerRef.current !== false) {
-          setCurrentLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-          setLastMapCenter({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-        }
+      if (timerRef.current !== false) {
+        setCurrentLocation(L.latLng({ lat: pos.coords.latitude, lng: pos.coords.longitude }));
+        setLastMapCenter(L.latLng({ lat: pos.coords.latitude, lng: pos.coords.longitude }));
       }
     }, (err) => {
-      // TODO:
       console.warn('ERROR(' + err.code + '): ' + err.message);
-      // --
     }, {
       timeout: 6000
     });
@@ -185,7 +180,6 @@ const LeafletView = (props) => {
           markers.map((el, i) =>
             <Marker
             key={`marker-${i}`}
-              /* eventHandlers={{ click: () => {} }} */
               icon={svgIcon({ label: `${i + 1}.` })}
               position={[el.location.lat, el.location.lng]}>
             </Marker>

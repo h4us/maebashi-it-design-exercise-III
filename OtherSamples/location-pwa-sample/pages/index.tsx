@@ -12,7 +12,6 @@ const ArchiveViewer = dynamic(() => import('../components/archive-viewer'), { ss
 
 export default function Home() {
   const activeView = useStore((s) => s.activeView);
-  const toggleAnimationView = useStore((s) => s.toggleAnimationView);
 
   return (
     <>
